@@ -1,0 +1,21 @@
+version: '3.2'
+services:
+  localhost-gitlab:
+    image: 'gitlab/gitlab-ce'
+    restart: always
+    hostname: 'localhost-gitlab'
+    ports:
+      - '80:80'
+      - '443:443'
+      - '22:22'
+    volumes:
+      - '/home/nik/code/yaml/gitlab/config:/etc/gitlab'
+      - '/home/nik/code/yaml/gitlab/logs:/var/log/gitlab'
+      - '/home/nik/code/yaml/gitlab/data:/var/opt/gitlab'
+  localhost-runner:
+    image: gitlab/gitlab-runner
+    restart: always
+    hostname: 'localhost-runner'
+    volumes:
+      - /srv/gitlab-runner/config:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock

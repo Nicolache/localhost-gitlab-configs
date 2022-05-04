@@ -4,6 +4,8 @@ services:
     image: 'gitlab/gitlab-ce'
     restart: always
     hostname: 'localhost-gitlab'
+    environment:
+      GITLAB_ROOT_PASSWORD: rootpass
     ports:
       - '80:80'
       - '443:443'

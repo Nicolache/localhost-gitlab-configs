@@ -25,13 +25,14 @@ check_interval = 0
     shm_size = 0
     network_mode = "localhost-gitlab-configs_default"
 
-# You need to set "network_mode" according to what is shown on docker-compose up (it's a name of the current directory + _default :
+# You need to set "network_mode" according to what is shown on docker-compose up.
 # It's needed so a domain name of the gitlab container resolved correctly within gitlab-job.
-# So you can avoid:
+# So you can avoid in job:
 # fatal: unable to access 'http://localhost-gitlab/nsnegin/wlan-portal.git/': Could not resolve host: localhost-gitlab
 # ERROR: Job failed: exit code 1
 #
 # nikolai@SPBNB-PRC4370:~/docker-compose-manifests/localhost-gitlab-configs$ docker-compose up -d
+# YOU NEED TO SET THIS vvvvvvvvvvvvvvvvvvvvvvvvvvv AS network_mode
 # Creating network "localhost-gitlab-configs_default" with the default driver
 # Creating localhost-gitlab-configs_localhost-runner_1 ... done
 # Creating localhost-gitlab-configs_localhost-gitlab_1 ... done
